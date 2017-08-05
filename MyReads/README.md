@@ -1,11 +1,9 @@
-# Udacity Projects
-
-## MyReads
+# MyReads
 Finalized application for the final assessment project for Udacity's React Fundamentals course
 
 It is based on the starter template provided by Udacity [MyReads Starter Template](https://github.com/udacity/reactnd-project-myreads-starter)
 
-### Project components
+## Project components
 ```
 +--public/    
  |-- index.html - DO NOT MODIFY
@@ -33,7 +31,7 @@ It is based on the starter template provided by Udacity [MyReads Starter Templat
 ```
 
 
-### Backend Server
+## Backend Server
 
 ### `getAll()`
 * Returns a Promise which resolves to a JSON object containing a collection of book objects.
