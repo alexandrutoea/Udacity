@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import serializeForm from 'form-serialize';
 
 import * as BooksAPI from '../BooksAPI';
 
@@ -19,15 +18,17 @@ class SearchPage extends Component {
 
   state = {
     searchedList: [],
+    query: '',
   }
 
-  handleSearchSubmit(e) {
+  handleSearchUpdate(e) {
     // Handles submitting teh search form
-
-    e.preventDefault();
-    const values = serializeForm(e.target, { hash: true });
+    const query = e.target.value;
+    this.setState({
+      query,
+    });
     // load books form API
-    BooksAPI.search(values.searchTerm, 20).then((books) => {
+    BooksAPI.search(query, 20).then((books) => {
       const searchedBooks = books;
       const currentBooks = this.props.books;
 
@@ -52,11 +53,15 @@ class SearchPage extends Component {
       <div className='search-books'>
         <div className='search-books-bar'>
           <Link className='close-search' to='/'>Close</Link>
-          <form onSubmit={ (e) => { this.handleSearchSubmit(e); } }>
-            <div className='search-books-input-wrapper'>
-              <input type='text' name='searchTerm' placeholder='Search by title or author' />
-            </div>
-          </form>
+          <div className='search-books-input-wrapper'>
+            <input
+              type='text'
+              name='searchTerm'
+              placeholder='Search by title or author'
+              onChange={ (e) => { this.handleSearchUpdate(e); } }
+              value={ this.state.query }
+            />
+          </div>
         </div>
         <div className='search-books-results'>
           <BookShelf

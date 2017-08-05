@@ -38,7 +38,7 @@ const BookShelf = ({ bookShelfTitle, books, handleStatusUpdate }) => (
 
 BookShelf.propTypes = {
   bookShelfTitle: PropTypes.string,
-  books: PropTypes.string,
+  books: PropTypes.array,
   handleStatusUpdate: PropTypes.func.isRequired,
 };
 
