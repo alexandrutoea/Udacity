@@ -3,6 +3,21 @@ Finalized application for the final assessment project for Udacity's React Funda
 
 It is based on the starter template provided by Udacity [MyReads Starter Template](https://github.com/udacity/reactnd-project-myreads-starter)
 
+## To run
+This project was build using [Yarn](https://yarnpkg.com/en/), however it can be run with NPM only
+
+### If using Yarn:
+```
+yarn
+yarn run start
+```
+
+### If using NPM:
+```
+npm i
+npm run start
+```
+
 ## Project components
 ```
 +--public/    
